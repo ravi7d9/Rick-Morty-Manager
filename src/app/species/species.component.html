@@ -1,0 +1,6 @@
+<mat-card-content>
+    <h4>Species</h4>
+    <mat-list-item role="listitem" *ngFor="let specie of config.species">
+        <mat-checkbox class="example-margin" [(ngModel)]="specie.ischecked">{{specie.value}}</mat-checkbox>
+    </mat-list-item>
+</mat-card-content>

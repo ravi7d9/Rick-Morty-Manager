@@ -1,15 +1,12 @@
-<mat-card>
-    <mat-card-content>
-        <!-- <h3>Filters</h3> -->
-       <mat-grid-list cols="2" rowHeight="2:1">
-            <mat-grid-tile>1</mat-grid-tile>
-            <mat-grid-tile>2</mat-grid-tile>
-            <mat-grid-tile>3</mat-grid-tile>
-            <mat-grid-tile>4</mat-grid-tile>
-          </mat-grid-list> 
-    </mat-card-content>
-
-
-</mat-card>
-
-       <!-- <mat-checkbox class="example-margin" [(ngModel)]="checked">Checked</mat-checkbox> -->
+<div class="main-wrap">
+    <div class="left-filter">
+        <h3>Filters</h3>
+        <app-species></app-species>
+        <app-gender></app-gender>
+        <app-origin></app-origin>
+    </div>
+    <div class="right-card">
+        <app-selected-filter></app-selected-filter>
+        <app-card-manager></app-card-manager>
+    </div>
+</div>

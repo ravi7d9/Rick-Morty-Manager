@@ -1,0 +1,48 @@
+<div class="filter-card">
+    <select>
+        <option disabled selected value> -- Sort By ID -- </option>
+        <option value="ascending">Ascending</option>
+        <option value="descending">Descending</option>
+    </select>
+</div>
+<div class="d-flex">
+    <div class="card" *ngFor="let a of [1,2,3,4,5]">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Shiba Inu</mat-card-title>
+                <mat-card-subtitle>
+                    <div class="flex-view">
+                        <div>id: 12</div>
+                        <div>created: 2 years ago</div>
+                    </div>
+                </mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                alt="Photo of a Shiba Inu">
+            <mat-card-content>
+                <table>
+                    <tr>
+                      <td>STATUS</td>
+                      <td>Maria Anders</td>
+                    </tr>
+                    <tr>
+                      <td>SPECIES</td>
+                      <td>Francisco Chang</td>
+                    </tr>
+                    <tr>
+                      <td>GENDER</td>
+                      <td>Roland Mendel</td>
+                    </tr>
+                    <tr>
+                      <td>ORIGIN</td>
+                      <td>Helen Bennett</td>
+                    </tr>
+                    <tr>
+                        <td>LAST LOCATION</td>
+                        <td>Helen Bennett</td>
+                      </tr>
+                  </table>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

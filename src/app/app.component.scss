@@ -1,0 +1,32 @@
+.main-wrap {
+    padding-left: 310px;
+}
+.left-filter {
+    width: 300px;
+    border: 1px solid;
+    position: fixed;
+    left: 0;
+    top: 8px;
+}
+.right-card {
+    border: 1px solid;
+    display: flex;
+    padding: 0;
+    flex-wrap: wrap;
+}
+.card {
+    background: #343535;
+    min-height: 50px;
+    margin-bottom: 20px;
+    margin: 10px;
+    width: calc(33.3% - 20px);
+    color: #ffffff9e;
+}
+.d-flex {
+    display: flex;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+.flex-view {
+    display: flex;
+}
