@@ -1,9 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { NgModule } from '@angular/core';
-
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { DemoMaterialModule } from './module/material.module';
@@ -12,8 +11,6 @@ import { GenderComponent } from './gender/gender.component';
 import { OriginComponent } from './origin/origin.component';
 import { SelectedFilterComponent } from './selected-filter/selected-filter.component';
 import { CardManagerComponent } from './card-manager/card-manager.component';
-import { ManagerService } from './service/manager.service';
-import { AbcService } from './service/abc.service';
 
 
 @NgModule({
@@ -29,9 +26,9 @@ import { AbcService } from './service/abc.service';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    DemoMaterialModule
+    DemoMaterialModule,
+    HttpClientModule
   ],
-  providers: [AbcService, ManagerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

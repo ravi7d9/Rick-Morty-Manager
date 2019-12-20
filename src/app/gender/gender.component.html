@@ -1,6 +1,6 @@
 <mat-card-content>
     <h4>Gender</h4>
     <mat-list-item role="listitem" *ngFor="let gender of config.gender">
-        <mat-checkbox class="example-margin" [(ngModel)]="gender.ischecked">{{gender.value}}</mat-checkbox>
+        <mat-checkbox (change)="manageGender($event, gender)" [(ngModel)]="gender.ischecked">{{gender.value}}</mat-checkbox>
     </mat-list-item>
 </mat-card-content>

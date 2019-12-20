@@ -1,39 +1,34 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
+import { Config } from '../config/config';
+import { map } from 'rxjs/operators';
+import { ApiCallService } from './api-call.service';
 
-// import { Injectable } from '@angular/core';
-// import { Config } from '../config/config';
-// import { map } from 'rxjs/operators';
-// import { ApiCallService } from './api-call.service';
-// import { HttpClient, HttpHeaders } from '@angular/common/http';
-
-// const httpOptions = {
-//   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-// };
-
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ManagerService {
 
-  constructor(
-    // private http: HttpClient
-    ) {
-    console.log('=-======');
+  @Output() public filterEvent: EventEmitter<any> = new EventEmitter();
+  @Output() public checkboxEvent: EventEmitter<any> = new EventEmitter();
+  @Output() public characterFilterEvent: EventEmitter<any> = new EventEmitter();
 
+  constructor(
+    private http: ApiCallService
+    ) {
    }
 
-  // getManulalCharacter() {
-    // const apiUrl = Config.apiUrls.character;
-    // return this.http
-    //   .invoke({
-    //     method: Config.apiMethods.get,
-    //     path: apiUrl
-    //   })
-    //   .pipe(map(response => response));
-
-    // return this.http.get('https://rickandmortyapi.com/api/character');
-  // }
-
-  testing() {
-    return 'hello';
+  getManulalCharacter(reqParam) {
+    let apiUrl = Config.apiUrls.character;
+    if (reqParam) {
+      apiUrl = `${Config.apiUrls.character}?${reqParam}`;
+    }
+    return this.http
+      .invoke({
+        method: Config.apiMethods.get,
+        path: apiUrl
+      })
+      .pipe(map(response => response));
   }
+
 
 }

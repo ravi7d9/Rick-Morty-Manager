@@ -1,6 +1,6 @@
 <mat-card-content>
-    <h4>Seleceted Filers</h4>
+    <h4>Origin</h4>
     <mat-list-item role="listitem" *ngFor="let origin of config.origin">
-        <mat-checkbox class="example-margin" [(ngModel)]="origin.ischecked">{{origin.value}}</mat-checkbox>
+        <mat-checkbox (change)="manageOrigin($event, origin)" [(ngModel)]="origin.ischecked">{{origin.value}}</mat-checkbox>
     </mat-list-item>
 </mat-card-content>

@@ -1,47 +1,45 @@
 <div class="filter-card">
-    <select>
-        <option disabled selected value> -- Sort By ID -- </option>
+    <select (change)="sortArr($event)">
         <option value="ascending">Ascending</option>
         <option value="descending">Descending</option>
     </select>
 </div>
 <div class="d-flex">
-    <div class="card" *ngFor="let a of [1,2,3,4,5]">
+    <div class="card" *ngFor="let card of characterDetail?.results">
         <mat-card>
             <mat-card-header>
-                <mat-card-title>Shiba Inu</mat-card-title>
+                <mat-card-title>{{card?.name}}</mat-card-title>
                 <mat-card-subtitle>
                     <div class="flex-view">
-                        <div>id: 12</div>
-                        <div>created: 2 years ago</div>
+                        <div>id: {{card?.id}}</div>
+                        <div class="text-gap"> - created: {{card?.created | date}}</div>
                     </div>
                 </mat-card-subtitle>
             </mat-card-header>
-            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-                alt="Photo of a Shiba Inu">
+            <img mat-card-image src="{{card?.image}}" alt="Photo of a Shiba Inu">
             <mat-card-content>
                 <table>
                     <tr>
-                      <td>STATUS</td>
-                      <td>Maria Anders</td>
+                        <td>STATUS</td>
+                        <td>{{card?.status}}</td>
                     </tr>
                     <tr>
-                      <td>SPECIES</td>
-                      <td>Francisco Chang</td>
+                        <td>SPECIES</td>
+                        <td>{{card?.species}}</td>
                     </tr>
                     <tr>
-                      <td>GENDER</td>
-                      <td>Roland Mendel</td>
+                        <td>GENDER</td>
+                        <td>{{card?.gender}}</td>
                     </tr>
                     <tr>
-                      <td>ORIGIN</td>
-                      <td>Helen Bennett</td>
+                        <td>ORIGIN</td>
+                        <td>{{card?.origin?.name}}</td>
                     </tr>
                     <tr>
                         <td>LAST LOCATION</td>
-                        <td>Helen Bennett</td>
-                      </tr>
-                  </table>
+                        <td>{{card?.location?.name}}</td>
+                    </tr>
+                </table>
             </mat-card-content>
         </mat-card>
     </div>
